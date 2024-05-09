@@ -6,7 +6,7 @@ RUN npm ci
 COPY . /app
 RUN npm run build
 
-FROM node:lts
+FROM node:lts-alpine
 RUN npm install -g serve
 WORKDIR /app
 COPY --from=build /app/build .
