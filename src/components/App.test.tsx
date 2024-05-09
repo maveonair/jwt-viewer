@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import App from "./App";
 
-test("renders title =)", () => {
+test("renders defaults", () => {
   render(<App />);
   const title = screen.getByText(/JWT Viewer/i);
   expect(title).toBeInTheDocument();
