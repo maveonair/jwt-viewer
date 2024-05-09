@@ -9,6 +9,6 @@ RUN npm run build
 FROM node:lts-alpine
 RUN npm install -g serve
 WORKDIR /app
-COPY --from=build /app/build .
+COPY --from=build /app/dist .
 EXPOSE 4000
 ENTRYPOINT [ "serve", "-s", ".", "-l", "4000" ]
