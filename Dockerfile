@@ -6,9 +6,9 @@ RUN npm ci
 COPY . /app
 RUN npm run build
 
-FROM nginx:alpine
-COPY --from=build /app/.deploy/nginx.conf /etc/nginx/conf.d/default.conf
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
+FROM node:lts
+RUN npm install -g serve
+WORKDIR /app
 COPY --from=build /app/build .
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+EXPOSE 4000
+ENTRYPOINT [ "serve", "-s", ".", "-l", "4000" ]
