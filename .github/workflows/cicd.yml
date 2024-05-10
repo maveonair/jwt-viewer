@@ -55,4 +55,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: maveonair/jwt-viewer:latest, maveonair/jwt-viewer:main-${{ env.COMMIT_SHORT_SHA }}-${{ env.BUILD_TIME }}
