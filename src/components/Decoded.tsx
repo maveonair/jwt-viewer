@@ -47,7 +47,7 @@ export default function Decoded({ token }: DecodedProps) {
 
   return (
     <div className="h-full">
-      <h1 className="text-2xl mb-3">Decoded</h1>
+      <h1 className="text-2xl mb-3 dark:text-white">Decoded</h1>
       <div className="border rounded h-full dark:bg-dark-dimmed dark:text-white dark:border-gray-800">
         <div className="border-b uppercase text-xs p-2 dark:border-gray-800">
           Header: <span className="text-gray-500">Algorithms & Token Type</span>

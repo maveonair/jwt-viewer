@@ -6,7 +6,7 @@ type EncodedProps = {
 export default function Encoded({ token, setToken }: EncodedProps) {
   return (
     <div className="h-full">
-      <h1 className="text-2xl mb-3">Encoded</h1>
+      <h1 className="text-2xl mb-3 dark:text-white">Encoded</h1>
       <div className="h-full">
         <div
           aria-label="token-input"
