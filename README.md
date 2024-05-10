@@ -2,6 +2,12 @@
 
 A simple JWT viewer that allows you to paste a JWT token and view the decoded payload.
 
+## Running the app
+
+```bash
+docker run -p 4000:4000 maveonair/jwt-viewer
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
