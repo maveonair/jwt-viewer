@@ -10,7 +10,7 @@ export default function Encoded({ token, setToken }: EncodedProps) {
       <div className="h-full">
         <div
           aria-label="token-input"
-          className="w-full h-full p-4 border border-gray-300 rounded-md font-mono"
+          className="w-full h-full p-4 border rounded-md font-mono focus:outline focus:outline-2 focus:outline-indigo-600 dark:bg-dark-dimmed dark:text-white dark:border-gray-800"
           contentEditable
           onInput={(e) => setToken(e.currentTarget.textContent)}
           suppressContentEditableWarning={true}

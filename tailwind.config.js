@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "index.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: "#010409",
+        "dark-dimmed": "#0d1117",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),
@@ -10,4 +15,3 @@ module.exports = {
     require("@tailwindcss/typography"),
   ],
 };
-
