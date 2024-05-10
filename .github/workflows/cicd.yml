@@ -1,4 +1,4 @@
-name: Build
+name: CI/CD
 
 env:
   node-version: 20.x
@@ -44,8 +44,15 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Set short sha and build time
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
+          echo "BUILD_TIME=$(date +%s)" >> $GITHUB_ENV
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: maveonair/jwt-viewer:latest, maveonair/jwt-viewer:${{ github.sha }}
+          tags: maveonair/jwt-viewer:latest, maveonair/jwt-viewer:main-${{ env.COMMIT_SHORT_SHA }}-${{ env.BUILD_TIME }}
