@@ -19,7 +19,7 @@ export default function Decoded({ token }: DecodedProps) {
       return JSON.stringify(JSON.parse(value), null, 2);
     } catch (e) {
       if (e instanceof Error) {
-        setError("Invalid input");
+        setError("Error: Invalid input");
       }
 
       return null;
@@ -38,7 +38,7 @@ export default function Decoded({ token }: DecodedProps) {
       return JSON.stringify(JSON.parse(value), null, 2);
     } catch (e) {
       if (e instanceof Error) {
-        setError("Invalid input");
+        setError("Error: Invalid input");
       }
 
       return null;
